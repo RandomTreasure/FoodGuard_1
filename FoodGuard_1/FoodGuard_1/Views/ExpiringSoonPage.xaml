@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodGuard_1.Views.ExpiringSoonPage"
              x:Name="Expiring_Soon_Page">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <CollectionView>
+            <
+        </CollectionView>
     </ContentPage.Content>
+    
 </ContentPage>

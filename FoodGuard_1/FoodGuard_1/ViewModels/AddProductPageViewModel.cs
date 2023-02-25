@@ -13,6 +13,7 @@ namespace FoodGuard_1.ViewModels
         public string EntryName { get; set; }
         public string EntryTags { get; set; }
         public AsyncCommand SaveCommand { get; }
+        public DateTime SelectDate { get; set; }
 
 
         // this stuff here is where the server should actually be called to save some items
@@ -32,7 +33,7 @@ namespace FoodGuard_1.ViewModels
 
         public async Task Save()
         {
-            dataSample.Add( new FoodItem { Id = 4, Name = EntryName, Quantity = 1, Tags = EntryTags, ExpiryDate = DateTime.Now});
+            dataSample.Add( new FoodItem { Id = 4, Name = EntryName, Quantity = 1, Tags = EntryTags, ExpiryDate = SelectDate});
 
            await Shell.Current.GoToAsync("..");
         }

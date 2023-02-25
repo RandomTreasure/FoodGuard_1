@@ -22,6 +22,8 @@
                    HorizontalOptions="Center" />
             <Entry Text="{Binding EntryTags}"
                    Placeholder="Tags"/>
+            <DatePicker Date="{Binding SelectDate}"
+                        WidthRequest="275"/>
         </StackLayout>
     </ContentPage.Content>
      
