@@ -1,8 +1,4 @@
-﻿using FoodGuard_1.Services;
-using FoodGuard_1.Views;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace FoodGuard_1
 {
@@ -12,8 +8,6 @@ namespace FoodGuard_1
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
