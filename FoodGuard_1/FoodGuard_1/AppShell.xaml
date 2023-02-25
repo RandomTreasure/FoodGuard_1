@@ -76,6 +76,14 @@
     <FlyoutItem Title="Home">
         <ShellContent Route="Recap_Page" ContentTemplate="{DataTemplate local:RecapPage}"/>
     </FlyoutItem>
+
+    <FlyoutItem Title="Frigorifero">
+        <ShellContent Route="Inventory_Page" ContentTemplate="{DataTemplate local:InventoryPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Spesa">
+        <ShellContent Route="Shopping_List_Page" ContentTemplate="{DataTemplate local:ShoppingListPage}"/>
+    </FlyoutItem>
     
 <!-- default comments
     

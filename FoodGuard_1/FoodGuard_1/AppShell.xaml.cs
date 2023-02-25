@@ -9,6 +9,13 @@ namespace FoodGuard_1
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(RecapPage), typeof(RecapPage));
+            Routing.RegisterRoute(nameof(InventoryPage), typeof(InventoryPage));
+            Routing.RegisterRoute(nameof(ShoppingListPage), typeof(ShoppingListPage));
+            Routing.RegisterRoute(nameof(ExpiringSoonPage), typeof(ExpiringSoonPage));
+
+            //Routing.RegisterRoute(nameof(), typeof());
+
+
             //Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 
