@@ -73,11 +73,11 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <FlyoutItem Title="Home">
+    <FlyoutItem Title="Home/RecapPage">
         <ShellContent Route="Recap_Page" ContentTemplate="{DataTemplate local:RecapPage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Frigorifero">
+    <FlyoutItem Title="InventoryPage">
         <ShellContent Route="Inventory_Page" ContentTemplate="{DataTemplate local:InventoryPage}"/>
     </FlyoutItem>
 

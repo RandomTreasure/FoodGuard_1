@@ -8,10 +8,16 @@ namespace FoodGuard_1
         public AppShell()
         {
             InitializeComponent();
+
+            #region Routing
+
             Routing.RegisterRoute(nameof(RecapPage), typeof(RecapPage));
             Routing.RegisterRoute(nameof(InventoryPage), typeof(InventoryPage));
             Routing.RegisterRoute(nameof(ShoppingListPage), typeof(ShoppingListPage));
             Routing.RegisterRoute(nameof(ExpiringSoonPage), typeof(ExpiringSoonPage));
+            Routing.RegisterRoute(nameof(AddProductPage), typeof(AddProductPage));
+
+            #endregion
 
             //Routing.RegisterRoute(nameof(), typeof());
 

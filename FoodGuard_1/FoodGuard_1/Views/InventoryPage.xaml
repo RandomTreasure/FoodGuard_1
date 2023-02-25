@@ -2,16 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:FoodGuard_1.ViewModels"
+             xmlns:models="clr-namespace:FoodGuard_1.Models"
              x:Class="FoodGuard_1.Views.InventoryPage"
              x:Name="Inventory_Page">
     <ContentPage.BindingContext>
         <viewmodels:InventoryPageViewModel/>
     </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddCommand}"/>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding }">
+            <ListView ItemsSource="{Binding Inventory}">
                 <ListView.ItemTemplate>
-
+                    <DataTemplate x:DataType="models:FoodItem">
+                        <ViewCell>
+                            <StackLayout Margin="15,10,5,10"
+                                         BackgroundColor="Transparent">
+                                <Label Text="{Binding Name}"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Start"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
