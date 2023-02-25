@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FoodGuard_1.ViewModels
 {
-    internal class ShoppingListPageViewModel
+    internal class ShoppingListPageViewModel : ViewModelTemplate
     {
     }
 }
