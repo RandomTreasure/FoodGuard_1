@@ -32,6 +32,12 @@ api innestato all'indirizzo : *http://168.119.117.67:8080/RemoveFromFrigo?id=ID*
 1) **ID** int, id dell'oggetto
 - output: *true* o *false* in base al sucesso dell'operazione
 
+**getJson()** - get database as Json
+
+api innestato all'indirizzo : *http://168.119.117.67:8080/getJson*
+- input: *niente*
+- output: Array Json con tutti gli elementi degli array
+
 ## Org
 
 *Client* - C# app
