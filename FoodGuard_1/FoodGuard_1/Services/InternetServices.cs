@@ -51,7 +51,7 @@ namespace FoodGuard_1.Services
                 }
             }
             catch (Exception ex)
-            {
+    {
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
             }
 
