@@ -13,16 +13,16 @@ namespace FoodGuard_1.ViewModels
 {
     public class InventoryPageViewModel : ViewModelTemplate
     {
-        public ObservableRangeCollection<FoodItem> Inventory { get; set; }
+        //public ObservableRangeCollection<FoodItem> Inventory { get; set; }
 
-        public DummyData data = new DummyData();
+       // public DummyData data = new DummyData();
 
         public AsyncCommand AddCommand { get; }
         public InventoryPageViewModel()
         {
             Title = "Frigorifero";
-            Inventory = new ObservableRangeCollection<FoodItem>();
-            Inventory = data.GetData();
+            //Inventory = new ObservableRangeCollection<FoodItem>();
+            //Inventory = data.GetData();
 
 
             /*Inventory = new ObservableRangeCollection<FoodItem>()

@@ -12,16 +12,24 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Save" Command="{Binding SaveCommand}"/>
+        <ToolbarItem Text="Remove" Command="{Binding RemoveCommand}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
         <StackLayout>
             <Entry Text="{Binding EntryName}"
-                   Placeholder="Nome del prodotto"
+                   Placeholder="string Name"
                    VerticalOptions="Center" 
                    HorizontalOptions="Center" />
-            <Entry Text="{Binding EntryTags}"
-                   Placeholder="Tags"/>
+            <Entry Text="{Binding EntryBuy}"
+                   Placeholder="int Buy"/>
+            <Entry Text="{Binding EntryExp}"
+                   Placeholder="int Exp"/>
+            <Entry BackgroundColor="Red"
+                   Text="{Binding EntryId}"
+                   Placeholder="int Id"/>
+
+
             <DatePicker Date="{Binding SelectDate}"
                         WidthRequest="275"/>
         </StackLayout>
