@@ -15,7 +15,9 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Inventory}">
+            <ListView ItemsSource="{Binding InventoryList}"
+                      IsPullToRefreshEnabled="True"
+                      RefreshCommand="{Binding GetListCommand}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="models:FoodItem">
                         <ViewCell>

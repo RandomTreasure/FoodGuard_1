@@ -15,12 +15,26 @@ namespace FoodGuard_1.ViewModels
     {
         //public ObservableRangeCollection<FoodItem> Inventory { get; set; }
 
+        public List<FoodItem> InventoryList { get; set; }
+        public InternetServices service;
+
        // public DummyData data = new DummyData();
 
         public AsyncCommand AddCommand { get; }
+
+        public AsyncCommand GetListCommand { get; }
+
+        //public AsyncCommand RefreshLocalDBCommand { get; }
         public InventoryPageViewModel()
         {
             Title = "Frigorifero";
+
+            service = new InternetServices();
+
+            GetListCommand = new AsyncCommand(GetList);
+
+            //InventoryList = new List<FoodItem>();
+
             //Inventory = new ObservableRangeCollection<FoodItem>();
             //Inventory = data.GetData();
 
@@ -33,6 +47,7 @@ namespace FoodGuard_1.ViewModels
             };*/
 
             AddCommand = new AsyncCommand(AddItem);
+           // RefreshLocalDBCommand = new AsyncCommand(RefreshLocalDB);
 
         }
 
@@ -41,6 +56,32 @@ namespace FoodGuard_1.ViewModels
             var route = $"{nameof(AddProductPage)}";
             await Shell.Current.GoToAsync(route);
 
+        }
+/*
+        public async Task RefreshLocalDB()
+        {
+            service = new InternetServices();
+
+            await GeneralServices.GetFrigo(service.client);
+
+            InventoryList = GeneralServices.GetFood();
+
+        }
+*/
+        public async Task GetList()
+        {
+            //InventoryList = await service.GetJson();
+            IsBusy = true;
+
+            await Task.Delay(2000);
+
+            InventoryList.Clear();
+
+            var coffees = await service.GetJson();
+
+            InventoryList.AddRange(coffees);
+
+            IsBusy = false;
         }
     }
 }

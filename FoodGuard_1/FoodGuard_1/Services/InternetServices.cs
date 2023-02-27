@@ -1,16 +1,19 @@
 ﻿using FoodGuard_1.Models;
+using FoodGuard_1.Services;
 using MvvmHelpers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace FoodGuard_1.Services
 {
@@ -21,7 +24,7 @@ namespace FoodGuard_1.Services
 
         public List<FoodItem> Items_Web;
 
-        private static readonly Uri uri = new Uri("http://168.119.117.67:8080/");
+        private readonly Uri uri = new Uri("http://168.119.117.67:8080/");
 
         public InternetServices()
         {
@@ -36,10 +39,10 @@ namespace FoodGuard_1.Services
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 WriteIndented = true,
             };
-
+            
         }
 
-        public async Task<List<FoodItem>> GetFrigo()
+        public async Task<List<FoodItem>> GetJson()
         {
             Items_Web = new List<FoodItem>();
 
@@ -50,6 +53,14 @@ namespace FoodGuard_1.Services
                 {
                     string content = await response.Content.ReadAsStringAsync();
                     Items_Web = System.Text.Json.JsonSerializer.Deserialize<List<FoodItem>>(content, serializerOptions);
+                    
+                    /*
+                    foreach (FoodItem f in Items_Web)
+                    {
+                        await GeneralServices.AddFood(f);
+                    }
+                    */
+                    
                 }
             }
             catch (Exception ex)
@@ -59,6 +70,30 @@ namespace FoodGuard_1.Services
 
             return Items_Web;
         }
+
+        /*
+        public async Task GetFrigo()
+        {
+
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(uri + "getFrigo");
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsByteArrayAsync();
+                    File.WriteAllBytes(Path.Combine(FileSystem.AppDataDirectory, "CopiedDB.db"), content);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {0}", ex.Message);
+            }
+
+        }
+
+        */
+
+
 
         public async Task UploadToFrigo(FoodItem cibo)
         {
