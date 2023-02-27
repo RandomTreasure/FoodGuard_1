@@ -1,13 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:FoodGuard_1.ViewModels"
              x:Class="FoodGuard_1.Views.RecapPage"
              x:Name="Recap_Page">
+    <ContentPage.BindingContext>
+        <viewmodels:RecapPageViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="/TBD/"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding Text}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"/>
+            <Button Text="Get Data From Web"
+                    Command="{Binding GetFromWebCommand}"/>
+            <Button Text="test"
+                    Command="{Binding TestCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

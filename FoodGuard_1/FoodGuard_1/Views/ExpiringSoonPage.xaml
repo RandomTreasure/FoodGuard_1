@@ -4,10 +4,6 @@
              x:Class="FoodGuard_1.Views.ExpiringSoonPage"
              x:Name="Expiring_Soon_Page">
     
-    <ContentPage.Content>
-        <CollectionView>
-            <
-        </CollectionView>
-    </ContentPage.Content>
+ 
     
 </ContentPage>
