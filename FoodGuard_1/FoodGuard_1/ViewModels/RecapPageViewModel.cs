@@ -29,7 +29,7 @@ namespace FoodGuard_1.ViewModels
 
         public async Task<List<FoodItem>> GetFromWeb()
         {
-            return await service.GetJson();
+            return await service.GetInventoryByJson();
         }
 
         public void Test()

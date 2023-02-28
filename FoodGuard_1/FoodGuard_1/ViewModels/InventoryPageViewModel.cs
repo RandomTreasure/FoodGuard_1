@@ -5,6 +5,7 @@ using MvvmHelpers;
 using MvvmHelpers.Commands;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -70,7 +71,10 @@ namespace FoodGuard_1.ViewModels
 */
         public async Task GetList()
         {
-            //InventoryList = await service.GetJson();
+            /*InventoryList = await service.GetInventoryByJson();
+
+            Debug.WriteLine(InventoryList.Count);
+            
             IsBusy = true;
 
             await Task.Delay(2000);
@@ -82,6 +86,7 @@ namespace FoodGuard_1.ViewModels
             InventoryList.AddRange(coffees);
 
             IsBusy = false;
+            */
         }
     }
 }

@@ -42,7 +42,7 @@ namespace FoodGuard_1.Services
             
         }
 
-        public async Task<List<FoodItem>> GetJson()
+        public async Task<List<FoodItem>> GetInventoryByJson()
         {
             Items_Web = new List<FoodItem>();
 
